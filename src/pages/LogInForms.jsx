@@ -1,5 +1,8 @@
 import React from 'react';
-import "../styles/Login.css";
+import Input from "../components/Input"
+import * as Yup from "yup";
+import {Formik} from "formik";
+import "../styles/login.css";
 
 const LogInForms = () => {
 	return(
@@ -8,9 +11,21 @@ const LogInForms = () => {
 				Animation
 			</div>
 			<div className="form-container">
-				<p>Inicia<span>Sesión</span></p>
-				<p>¡Bienvenido de nuevo!</p>
-				<p>Inicia seción para empezar</p>
+				<p className="form-text-title">Inicia <span>Sesión</span></p>
+				<p className="form-text">¡Bienvenido de nuevo!</p>
+				<p className="form-text">Inicia seción para empezar</p>
+
+				<Formik
+					initialValues={{
+						email: "",
+						password: ""
+					}}
+					onSubmit={(values) => {
+						console.log(values);
+					}}
+				>
+					<Input/>
+				</Formik>
 			</div>
 		</div>
 	);

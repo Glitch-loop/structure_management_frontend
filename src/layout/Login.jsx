@@ -1,12 +1,12 @@
 import React from 'react';
 import LogInForms from '../pages/LogInForms';
-import "../styles/Login.css";
+import "../styles/login.css";
 
 const Login = () => {
 	return(
-		<div>
+		<>
 			<LogInForms/>
-		</div>
+		</>
 	);
 }
 
