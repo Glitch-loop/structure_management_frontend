@@ -39,14 +39,27 @@ span{
 	width: 70%;
 	height: 5%;
 	margin-left: 15px;
-	background-color: #7E55F3;
+	border-bottom: 2px solid #7E55F3;
+	background-color: white;
 	display: flex;
+	transition: border-bottom 1s;
 }
+div.input-background:hover{
+	border-bottom: 10px solid #7E55F3;
+}
+
 .input{
-	width: 30px;
+	width: 100%;
+	border: 0px solid transparent;
+	font-size: 25px;
+}
+.input:focus{
+	outline: none;
 }
 
 .icon{
-	width: 20px;
+	width: 50px;
+	height: 100%;
+	font-size: 30px;
 	margin-top: 0px;
 }

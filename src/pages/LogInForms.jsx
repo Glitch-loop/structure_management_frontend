@@ -17,14 +17,19 @@ const LogInForms = () => {
 
 				<Formik
 					initialValues={{
-						email: "",
+						mail: "",
 						password: ""
 					}}
 					onSubmit={(values) => {
 						console.log(values);
 					}}
 				>
-					<Input/>
+					<Input 
+						id="mail"
+						name="mail"
+						type="text"
+						placeholder="Email"
+					/>
 				</Formik>
 			</div>
 		</div>
