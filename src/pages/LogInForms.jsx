@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from "../components/Input"
+import Button from '../components/Button';
 import * as Yup from "yup";
 import {Formik} from "formik";
 import "../styles/login.css";
@@ -37,6 +38,7 @@ const LogInForms = () => {
 							type="text"
 							placeholder="Contraseña"
 						/>
+						<Button text="Iniciar"/>
 					</>
 				</Formik>
 			</div>

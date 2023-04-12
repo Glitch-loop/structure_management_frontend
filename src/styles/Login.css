@@ -63,3 +63,17 @@ span{
 	font-size: 30px;
 	margin-top: 0px;
 }
+
+.button{
+	width: 10%;
+	height: 50px;
+	background-color: #7E55F3;
+	border-radius: 10px;
+	border: 0px;
+	transition: all 1s;
+}
+.button:hover{
+	transform: translate(0px, -5px);
+	scale: 1.05;
+	cursor: pointer;
+}
