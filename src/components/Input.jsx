@@ -1,32 +1,31 @@
-import React from 'react';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
+import useClickOutside from "../hooks/useClickOutside";
 import {GrMailOption} from "react-icons/gr";
 import {RxLockClosed} from "react-icons/rx";
 import "../styles/login.css";
 
 const Input = ({type, name, placeholder, value, id}) => {
 	const ref = useRef(null);
+	const activeAnimation = () => ref.current.style["border-bottom"] = "10px solid #7E55F3";
+	const disableAnimation = () => ref.current.style["border-bottom"] = "2px solid #7E55F3";
+	
+	useClickOutside(ref, disableAnimation);
 
 	const getIcon = (name) => {
 		switch(name){
 			case "mail":
 				return <GrMailOption className="icon"/>;
 			case "password":
-				return <RxLockClosed/>;
+				return <RxLockClosed className="icon"/>;
 			default:
 				return <GrMailOption className="icon"/>;
 		}
 	}
 
-	const activeInputAnimation = () => {
-		ref.current.click();
-		console.log(ref)
-	}
-
 	const Icon = getIcon(name);
 
 	return(
-		<div className="input-background" onClick={activeInputAnimation} ref={ref}>
+		<div className="input-background" onClick={activeAnimation} ref={ref}>
 			{Icon}
 			<input
 				id={id}

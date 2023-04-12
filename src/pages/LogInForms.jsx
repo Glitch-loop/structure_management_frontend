@@ -24,12 +24,20 @@ const LogInForms = () => {
 						console.log(values);
 					}}
 				>
-					<Input 
-						id="mail"
-						name="mail"
-						type="text"
-						placeholder="Email"
-					/>
+					<>
+						<Input 
+							id="mail"
+							name="mail"
+							type="text"
+							placeholder="Email"
+						/>
+						<Input 
+							id="password"
+							name="password"
+							type="text"
+							placeholder="Contraseña"
+						/>
+					</>
 				</Formik>
 			</div>
 		</div>

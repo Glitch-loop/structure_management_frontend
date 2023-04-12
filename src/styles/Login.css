@@ -44,7 +44,7 @@ span{
 	display: flex;
 	transition: border-bottom 1s;
 }
-div.input-background:hover{
+.input-background:hover{
 	border-bottom: 10px solid #7E55F3;
 }
 
