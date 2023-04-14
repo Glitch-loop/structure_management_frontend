@@ -7,7 +7,7 @@ import "../styles/login.css";
 const Input = ({type, name, placeholder, value, id}) => {
 	const ref = useRef(null);
 	const activeAnimation = () => ref.current.style["border-bottom"] = "10px solid #7E55F3";
-	const disableAnimation = () => ref.current.style["border-bottom"] = "2px solid #7E55F3";
+	const disableAnimation = () => ref.current.style = "button";
 	
 	useClickOutside(ref, disableAnimation);
 

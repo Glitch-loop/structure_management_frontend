@@ -6,7 +6,7 @@ const Button = ({text, icon}) => {
 		<>
 			{icon ? (
 				<>
-				
+
 				</>
 				):(
 				<>
