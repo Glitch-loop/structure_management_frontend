@@ -46,8 +46,38 @@ span{
 	display: flex;
 	transition: border-bottom 1s;
 }
+.input-background-active{
+	width: 40vw;
+	height: 5%;
+	margin-left: 15px;
+	border-bottom: 10px solid #7E55F3;
+	background-color: white;
+	display: flex;
+	transition: border-bottom 1s;
+}
+.input-background-error{
+	width: 40vw;
+	height: 5%;
+	margin-left: 15px;
+	border-bottom: 2px solid #EA68B0;
+	background-color: white;
+	display: flex;
+	transition: border-bottom 1s;
+}
+.input-background-active-error{
+	width: 40vw;
+	height: 5%;
+	margin-left: 15px;
+	border-bottom: 2px solid #EA68B0;
+	background-color: white;
+	display: flex;
+	transition: border-bottom 1s;
+}
 .input-background:hover{
 	border-bottom: 10px solid #7E55F3;
+}
+.input-background-error:hover{
+	border-bottom: 10px solid #EA68B0;
 }
 
 .input{
@@ -92,4 +122,7 @@ span{
 	height: 20%;
 	margin-top: 0px;
 	padding-top: 50px;
+}
+.error{
+	margin-left: 15px;
 }

@@ -2,10 +2,23 @@ import React from 'react';
 import Input from "../components/Input"
 import Button from '../components/Button';
 import * as Yup from "yup";
-import {Formik} from "formik";
+import {Formik, Form} from "formik";
 import "../styles/login.css";
 
 const LogInForms = () => {
+	const loginSchema = Yup.object().shape({
+		mail: Yup.
+			string().
+			email("Email no Válido").
+			nonNullable().
+			required("Este Campo es Obligatorio"),
+		password: Yup.
+			string().
+			required("Este Campo es Obligatorio").
+			nonNullable().
+			max(300, "Texto Ingresado Demasiado Largo")
+	});
+
 	return(
 		<div className="frame">
 			<div className="animation">
@@ -23,32 +36,41 @@ const LogInForms = () => {
 						mail: "",
 						password: ""
 					}}
-					onSubmit={(values) => {
-						console.log(values);
+					onSubmit={(values, {resetForm}) => {
+						console.log("XD", values);
+						resetForm();
 					}}
 					className="formik"
+					validationSchema={loginSchema}
 				>
-					<>
-						<div style={{marginTop: 50, marginBottom: 50, position: "absolute", top: "25vh"}}>
-							<Input 
-								id="mail"
-								name="mail"
-								type="text"
-								placeholder="Email"
-							/>
-						</div>
-						<div style={{marginTop: 50, marginBottom: 50, position: "absolute", top: "35vh"}}>
-							<Input 
-								id="password"
-								name="password"
-								type="text"
-								placeholder="Contraseña"
-							/>
-						</div>
-						<div className="formik-button">
-							<Button text="Iniciar"/>
-						</div>
-					</>
+					{({handleSubmit, values, errors, touched}) => {
+						return(
+							<Form onSubmit={handleSubmit}>
+								<div style={{marginTop: 50, marginBottom: 50, position: "absolute", top: "25vh"}}>
+									<Input 
+										id="mail"
+										name="mail"
+										type="mail"
+										value={values.mail}
+										placeholder="Email"
+									/>
+								</div>
+								<div style={{marginTop: 50, marginBottom: 50, position: "absolute", top: "35vh"}}>
+									<Input 
+										id="password"
+										name="password"
+										type="password"
+										value={values.password}
+										placeholder="Contraseña"
+										error={errors.password && touched.password? errors.password : null}
+									/>
+								</div>
+								<div className="formik-button">
+									<Button text="Iniciar"/>
+								</div>
+							</Form>
+						);	
+					}}
 				</Formik>
 			</div>
 		</div>
