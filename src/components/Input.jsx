@@ -7,10 +7,7 @@ import "../styles/login.css";
 
 const Input = ({type, name, placeholder, value, id, error}) => {
 	const ref = useRef(null);
-	const activeAnimation = (err) =>{
-		const component = ref.current;
-		err? component.className = "input-background-active-error" : component.className = "input-background-active";
-	}
+	const activeAnimation = () => ref.current.className = "input-background-active";
 	const disableAnimation = () => ref.current.className = "input-background";
 	
 	useClickOutside(ref, disableAnimation);
@@ -30,7 +27,7 @@ const Input = ({type, name, placeholder, value, id, error}) => {
 
 	return(
 		<>
-			<div className={error? "input-background-error" : "input-background"} onClick={() => activeAnimation(error)} ref={ref}>
+			<div className={error? "input-background-error" : "input-background"} onClick={activeAnimation} ref={ref}>
 				{Icon}
 				<Field
 					id={id}
