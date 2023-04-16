@@ -46,7 +46,7 @@ const LogInForms = () => {
 					{({handleSubmit, values, errors, touched}) => {
 						return(
 							<Form onSubmit={handleSubmit}>
-								<div style={{marginTop: 50, marginBottom: 50, position: "absolute", top: "25vh"}}>
+								<div style={{marginTop: 50, marginBottom: 50, position: "absolute", top: "30vh"}}>
 									<Input 
 										id="mail"
 										name="mail"
@@ -55,7 +55,7 @@ const LogInForms = () => {
 										placeholder="Email"
 									/>
 								</div>
-								<div style={{marginTop: 50, marginBottom: 50, position: "absolute", top: "35vh"}}>
+								<div style={{marginTop: 50, marginBottom: 50, position: "absolute", top: "45vh"}}>
 									<Input 
 										id="password"
 										name="password"
