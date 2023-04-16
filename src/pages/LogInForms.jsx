@@ -53,6 +53,7 @@ const LogInForms = () => {
 										type="mail"
 										value={values.mail}
 										placeholder="Email"
+										error={errors.mail && touched.mail? errors.mail : null}
 									/>
 								</div>
 								<div style={{marginTop: 50, marginBottom: 50, position: "absolute", top: "45vh"}}>
