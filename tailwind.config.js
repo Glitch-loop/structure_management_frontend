@@ -6,7 +6,8 @@ export default {
       "prpl": "#7E55F3",
       "d-prpl": "#86469C",
       "pink": "#FFCDEA",
-      "d-pink": "#EF65B2"
+      "d-pink": "#EF65B2",
+      "d-blue": "#26265A"
     },
     extend: {},
   },

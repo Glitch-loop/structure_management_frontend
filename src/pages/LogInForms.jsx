@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import * as Yup from "yup";
 import {Formik, Form} from "formik";
 import "../styles/login.css";
+import "css-doodle";
 
 const LogInForms = () => {
 	const loginSchema = Yup.object().shape({
@@ -21,8 +22,25 @@ const LogInForms = () => {
 
 	return(
 		<div className="frame">
-			<div className="animation">
-				Animation
+			<div className="w-1/4 h-full bg-d-blue">
+				<css-doodle>
+					{`@grid: 20 / 60vmin;
+						background: cyan;
+						scale: 0;
+						opacity: 0;
+						animation: m 7s linear infinite;
+						:doodle {
+							@size: 100% 100%;
+						}
+
+						animation-delay: calc(-1s/@I * @i * @sin(@i));	
+
+						@keyframes m {
+							0%, 50%, 90% { scale: 1; opacity: 1 }
+							25%, 75%, 100% { scale: 0; opacity: 0 }
+						}`
+					}
+				</css-doodle>
 			</div>
 			<div className="form-container">
 				<div className="text-container">
