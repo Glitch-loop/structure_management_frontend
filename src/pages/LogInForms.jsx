@@ -57,6 +57,22 @@ const LogInForms = () => {
 					onSubmit={(values, {resetForm}) => {
 						console.log("XD", values);
 						resetForm();
+						fetch('https://structure-management-backend-service-o3il3mptsa-ue.a.run.app/login',{
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'http://localhost:3001'
+    },
+    body: JSON.stringify({
+      email: 'fray@gmail.com',
+      password: 'aswA1!Q4@'      
+    })
+
+  })
+  .then(async function (response) {
+    console.log(await response.json());
+})
 					}}
 					className="formik"
 					validationSchema={loginSchema}

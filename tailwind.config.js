@@ -9,7 +9,11 @@ export default {
       "d-pink": "#EF65B2",
       "d-blue": "#26265A"
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        "Montserrat": ["Montserrat", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }

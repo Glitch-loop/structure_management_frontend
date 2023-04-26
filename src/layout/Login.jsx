@@ -2,12 +2,6 @@ import React from 'react';
 import LogInForms from '../pages/LogInForms';
 import "../styles/login.css";
 
-const Login = () => {
-	return(
-		<>
-			<LogInForms/>
-		</>
-	);
-}
+const Login = () => <LogInForms/>;
 
-export default Login
+export default Login;
